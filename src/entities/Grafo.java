@@ -75,7 +75,7 @@ public class Grafo {
 		int removidos = 0;
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(saida));
-			bw.write("Passo, Saudaveis, Infectados, Removidos");
+			bw.write("Passo, Infectados, Removidos, Saudaveis");
 			int passos = 1;
 			Deque<String> filaDeInfectados = new ArrayDeque<>();	//fila de vertices que precisaremos visitar os vizinhos
 			filaDeInfectados.add(inicio);
@@ -93,12 +93,13 @@ public class Grafo {
 							infectados++;
 							status.put(vizinho, 'I');
 							filaDeInfectados.add(vizinho);
-						}
+						}						
 					}
+					filaDeInfectados.add(verticeAtual);
 				}
 				System.out.println("Passo " + passos + "...");
 				bw.newLine();
-				bw.write(passos++ + ", " + saudaveis + ", " + infectados + ", " + removidos);				
+				bw.write(passos++ + ", " + infectados + ", " + removidos+ ", " + saudaveis);				
 			}			
 			bw.close();
 		}catch(IOException e){

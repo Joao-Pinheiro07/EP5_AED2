@@ -10,7 +10,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Digite o caminho dos vertices gigantes a serem lidos: ");
-		String vertices = sc.nextLine();
+		String vertices = sc.nextLine();		
 		Grafo.setarVerticesGigantes(vertices);
 		System.out.println();
 		
@@ -23,7 +23,7 @@ public class Main {
 		
 		System.out.println();
 		System.out.print("Digite o caminho do arquivo de saída: ");
-		String saida = sc.nextLine();
+		String saida = sc.nextLine();		
 		
 		long checkPoint2 = System.currentTimeMillis();
 		Grafo.simular_contagio(saida);
